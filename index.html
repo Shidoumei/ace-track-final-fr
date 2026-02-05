@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AceTrack - Past Paper Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* Midnight Gold Theme Definitions */
+    :root {
+      --gold-primary: #C5A059;
+      --gold-secondary: #997A3D;
+      --gold-bg: #000000;
+      --gold-surface: #080808;
+      --gold-border: #1A1A1A;
+    }
+
+    .theme-gold {
+      background-color: var(--gold-bg) !important;
+      color: #FFFFFF !important;
+    }
+
+    .theme-gold body {
+      background-color: var(--gold-bg) !important;
+    }
+
+    /* Force overrides for the gold theme */
+    .theme-gold .bg-white, 
+    .theme-gold .dark\:bg-slate-900,
+    .theme-gold aside,
+    .theme-gold header {
+      background-color: var(--gold-surface) !important;
+      border-color: var(--gold-border) !important;
+    }
+
+    .theme-gold .bg-[#F8FAFC],
+    .theme-gold .bg-slate-50,
+    .theme-gold .dark\:bg-slate-950 {
+      background-color: var(--gold-bg) !important;
+    }
+
+    .theme-gold .text-blue-600,
+    .theme-gold .text-blue-500,
+    .theme-gold .dark\:text-blue-400,
+    .theme-gold .text-indigo-600 {
+      color: var(--gold-primary) !important;
+    }
+
+    .theme-gold .bg-blue-600,
+    .theme-gold .bg-indigo-600,
+    .theme-gold .bg-blue-500 {
+      background-color: var(--gold-primary) !important;
+      color: #000000 !important;
+    }
+
+    .theme-gold .bg-blue-600:hover,
+    .theme-gold .bg-indigo-600:hover {
+      background-color: var(--gold-secondary) !important;
+    }
+
+    .theme-gold .bg-blue-50,
+    .theme-gold .dark\:bg-blue-900\/20,
+    .theme-gold .bg-indigo-50 {
+      background-color: rgba(197, 160, 89, 0.1) !important;
+    }
+
+    .theme-gold .border-blue-100,
+    .theme-gold .dark\:border-blue-900\/30,
+    .theme-gold .border-slate-100,
+    .theme-gold .dark\:border-slate-800 {
+      border-color: var(--gold-border) !important;
+    }
+
+    .theme-gold .text-slate-800,
+    .theme-gold .dark\:text-slate-100,
+    .theme-gold .text-slate-700 {
+      color: #F8FAFC !important;
+    }
+
+    .theme-gold .shadow-blue-500\/20,
+    .theme-gold .shadow-blue-100 {
+      shadow: none !important;
+      box-shadow: 0 10px 15px -3px rgba(197, 160, 89, 0.1) !important;
+    }
+
+    .theme-gold input, 
+    .theme-gold select, 
+    .theme-gold textarea {
+      background-color: #0c0c0c !important;
+      border-color: var(--gold-border) !important;
+      color: #fff !important;
+    }
+
+    .theme-gold .divide-slate-50 > *, 
+    .theme-gold .divide-slate-800 > * {
+      border-color: var(--gold-border) !important;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#C5A059',
+              dark: '#997A3D',
+              light: '#E5C17C'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
